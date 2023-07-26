@@ -1,0 +1,41 @@
+﻿@page "/Sesion02"
+@using Tarea1.Models;
+
+<Sesion NumeroSesion="2"></Sesion>
+<EditForm Model="@ModelUsuario" OnInvalidSubmit="Aceptar">
+    <DataAnnotationsValidator />
+    <Contenedor Titulo="Mantenedor de Usuarios" Cancelar="Cancelar">
+    <Codigo>        
+                <div class="mb-3">
+                    <label for="rut" class="form-label">Rut: </label>
+                    <input type="text" id="rut" @bind-value="@ModelUsuario.Rut" class="form-control" />
+                    <ValidationMessage For="()=>ModelUsuario.Rut"></ValidationMessage>
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre Completo: </label>
+                    <input type="text" id="nombre" @bind-value="@ModelUsuario.Nombre" class="form-control" />
+                    <ValidationMessage For="()=>ModelUsuario.Nombre"></ValidationMessage>
+                </div>
+                <div class="mb-3">
+                    <label for="fechanac" class="form-label">Fecha Nacimiento: </label>
+                    <input type="date" id="fechanac" @bind-value="@ModelUsuario.Fecha_nacimiento" class="form-control" />
+                    <ValidationMessage For="()=>ModelUsuario.Fecha_nacimiento"></ValidationMessage>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username: </label>
+                    <input type="text" id="username" @bind-value="@ModelUsuario.Usuario" class="form-control" />
+                    <ValidationMessage For="()=>ModelUsuario.Usuario"></ValidationMessage>
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Password: </label>
+                    <input type="password" id="pwd" @bind-value="@ModelUsuario.Contraseña" class="form-control" />
+                    <ValidationMessage For="()=>ModelUsuario.Contraseña"></ValidationMessage>
+                </div>                    
+    </Codigo>    
+</Contenedor>
+</EditForm>
+
+
+@code {
+    
+}
